@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javascript>
+	<class type="Object" superclass="Object">
+    <methods>
+    	<method name="create" scope="static">
+    		<description>
+    			Creates a new object with the specified prototype object and properties.
+    		</description>
+    		<browsers>
+    			<browser platform="Chrome" version="1.0+">
+    				<description>
+    					Uses a polyfill to replicate ECMAScript 262 v 5 capability in versions &lt; 5.0. Otherwise uses native implementation.
+    				</description>
+    			</browser>
+    			<browser platform="Safari" version="1.0+">
+    				<description>
+    					Uses a polyfill to replicate ECMAScript-262 v 5 capability in versions &lt; 5.0. Otherwise uses native implementation.
+    				</description>
+    			</browser>
+    			<browser platform="Opera" version="9.0+">
+    				<description>
+    					Uses a polyfill to replicate ECMAScript-262 v 5 capability in all current versions.
+    				</description>
+    			</browser>
+    			<browser platform="IE" version="6.0+">
+    				<description>
+    					Uses polyfill to replicate ECMAScript-262 v 5 capability in versions &lt; 9.0. Otherwise uses native implementation.
+    				</description>
+    			</browser>
+    			<browser platform="Mozilla" version="3.2+">
+    				<description>
+    					Uses a polyfill to replicate ECMAScript-262 v 5 capability in versions &lt; 4.0. Otherwise uses native implementation.
+    				</description>
+    			</browser>
+    		</browsers>
+    		<return-description>
+    			An object that has the specified object as its prototype and the passed properties as its object properties.
+    		</return-description>
+    		<exceptions>
+    			<exception type="TypeError">
+    				<description>
+    					Throws a TypeError exception if the proto parameter isn't null or an object.
+    				</description>
+    			</exception>
+    		</exceptions>
+    		<parameters>
+    			<parameter name="proto" type="Object" usage="required">
+    				<description>
+    					The prototypal object the newly created object will inherit properties from. Must be null or an Object.
+    				</description>
+    				<values>
+    					<value name="null" description="The null object" />
+    					<value name="object" description="Any EcmaScript or JavaScript Object. Basically, anything besides the atomic values true, false, or any Number." />
+    				</values>
+    			</parameter>
+    			<parameter name="propertiesObject" type="Object" usage="optional">
+    				<description>
+    					If specified and not undefined, an object whose enumerable own properties (that is, those properties defined upon itself and not enumerable properties along its prototype chain) specify property descriptors to be added to the newly-created object, with the corresponding property names.
+    				</description>
+    				<values>
+    					<value name="object" description="An EcmaScript Object literal or reference to an ECMAScript object literal." />
+    				</values>
+    			</parameter>
+    		</parameters>
+    		<return-types>
+    			<return-type type="Object" />
+    		</return-types>
+    	</method>
+    	<method name="getPrototypeOf" scope="static">
+    		<description>
+    			Returns the prototype of the specified object.
+    		</description>
+    		<browsers>
+    			<browser platform="Chrome" version="1.0+">
+    				<description>
+    					Uses a polyfill to replicate ECMAScript 262 v 5 capability in versions &lt; 5.0. Otherwise uses native implementation.
+    				</description>
+    			</browser>
+    			<browser platform="Safari" version="1.0+">
+    				<description>
+    					Uses a polyfill to replicate ECMAScript-262 v 5 capability in versions &lt; 5.0. Otherwise uses native implementation.
+    				</description>
+    			</browser>
+    			<browser platform="Opera" version="9.0+">
+    				<description>
+    					Uses a polyfill to replicate ECMAScript-262 v 5 capability in all current versions.
+    				</description>
+    			</browser>
+    			<browser platform="IE" version="6.0+">
+    				<description>
+    					Uses polyfill to replicate ECMAScript-262 v 5 capability in versions &lt; 9.0. Otherwise uses native implementation.
+    				</description>
+    			</browser>
+    			<browser platform="Mozilla" version="3.2+">
+    				<description>
+    					Uses a polyfill to replicate ECMAScript-262 v 5 capability in versions &lt; 4.0. Otherwise uses native implementation.
+    				</description>
+    			</browser>
+    		</browsers>
+    		<return-description>
+    			An object that is the prototype of the passed object.
+    		</return-description>
+    		<exceptions>
+    			<exception type="TypeError">
+    				<description>
+    					Throws a TypeError exception if the object parameter isn't an Object.
+    				</description>
+    			</exception>
+    		</exceptions>
+    		<parameters>
+    			<parameter name="object" type="Object" usage="required">
+    				<description>
+    					The object whose prototype is to be returned.
+    				</description>
+    				<values>
+    					<value name="object" description="Any EcmaScript or JavaScript Object. Basically, anything besides the atomic values true, false, or any Number." />
+    				</values>
+    			</parameter>
+    		</parameters>
+    		<return-types>
+    			<return-type type="Object" />
+    		</return-types>
+    	</method>
+    </methods>
+</class>
+<class type="javascript" superclass="Object">
+	<properties>
+		<property name="common" type="javascript.common" scope="static" access="read">
+			<description>
+				Container object for common library classes.
+			</description>
+		</property>
+	</properties>
+	<description>
+		Container object for generic javascript classes.
+	</description>
+	<references>
+		<reference name="Object" />
+		<reference name="javascript.common" />
+	</references>
+</class>
+<class type="javascript.common" superclass="Object">
+	<properties>
+		<property name="Namespace" type="javascript.common.Namespace" scope="static" access="read">
+			<description>
+				A Namespace prototype that provides access to uri and alias properties.
+			</description>
+		</property>
+	</properties>
+	<description>
+		Container object for generic common javascript classes.
+	</description>
+	<references>
+		<reference name="Object" />
+		<reference name="javascript" />
+		<reference name="javascript.common.Namespace" />
+	</references>
+</class>
+<class type="javascript.common.Namespace" superclass="Object">
+	<properties>
+		<property name="_uri" type="String" scope="instance" access="read-write" visibility="internal">
+			<description>
+				The uri for a Namespace.
+			</description>
+		</property>
+		<property name="_alias" type="String" scope="instance" access="read-write" visibility="internal">
+			<description>
+				The alias for a Namespace.
+			</description>
+		</property>
+	</properties>
+	<methods>
+		<method name="getUri" scope="instance">
+			<description>
+				Getter for the internal _uri property.
+			</description>
+			<return-description>
+				The String uri for the instance.
+			</return-description>
+			<return-types>
+				<return-type type="String" />
+			</return-types>
+		</method>
+		<method name="setUri" scope="instance">
+			<parameters>
+				<parameter name="value" type="String" usage="required">
+					<description>
+						The String value to set the internal _uri property to.
+					</description>
+				</parameter>
+			</parameters>
+			<description>
+				Setter for the internal _uri property.
+			</description>
+		</method>
+		<method name="getAlias" scope="instance">
+			<description>
+				Getter for the internal _alias property.
+			</description>
+			<return-description>
+				The String alias for the instance.
+			</return-description>
+			<return-types>
+				<return-type type="String" />
+			</return-types>
+		</method>
+		<method name="setAlias" scope="instance">
+			<parameters>
+				<parameter name="value" type="String" usage="required">
+					<description>
+						The String value to set the internal _alias property to.
+					</description>
+				</parameter>
+			</parameters>
+			<description>
+				Setter for the internal _alias property.
+			</description>
+		</method>
+	</methods>
+	<constructors>
+		<constructor scope="static">
+			<parameters>
+				<parameter name="proto" type="javascript.common.Namespace" usage="required">
+					<description>
+						Use Object.create passing the javascript.common.Namespace object as the prototype to create Namespace instances.
+					</description>
+				</parameter>
+				<parameter name="propertiesObject" type="Object" usage="optional">
+					<description>
+						Use an object literal with the keys "_uri" and "_alias" with string values to set the _uri and _alias properties at construction. Otherwise use the setters after construction.
+					</description>
+				</parameter>
+			</parameters>
+			<references>
+				<reference name="Object.create" />
+			</references>
+			<return-description>
+				Creates an Object whose prototype is the prototypal javascript.common.Namespace object.
+			</return-description>
+			<return-types>
+				<return-type type="javascript.common.Namespace" />
+			</return-types>
+		</constructor>
+	</constructors>
+	<references name="Object" />
+	<references name="javascript" />
+	<references name="javascript.common" />
+</class>
+
+</javascript>

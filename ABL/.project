@@ -3,6 +3,7 @@
 	<name>ABL</name>
 	<comment></comment>
 	<projects>
+		<project>jasmine</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
